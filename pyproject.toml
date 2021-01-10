@@ -1,0 +1,23 @@
+[tool.poetry]
+name = "Amazsel"
+version = "0.1.0"
+description = "Test automation project based on Selenium Webdriver with Python."
+authors = ["Remek953 <remek.kosiorek@gmail.com>"]
+maintainers = ["Remek953 <remek.kosiorek@gmail.com>"]
+license = "MIT"
+readme = "README.md"
+homepage = ""
+repository = ""
+documentation = ""
+
+[tool.poetry.dependencies]
+python = "^3.7"
+selenium = "^3.141.0"
+webdriver-manager = "^3.2.2"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
