@@ -26,7 +26,14 @@ class TestMainPage(unittest.TestCase):
 		main_page.open_page()
 		assert main_page.is_title_matches()
 		main_page.print_title()
-		
+
+	def test_click_logo(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.click_logo()
+		assert main_page.is_title_matches()
+		assert main_page.is_logo_url_matches()
+
 
 if __name__ == "__main__":
 	unittest.main()

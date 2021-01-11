@@ -12,7 +12,7 @@ Description of main directories and it's content:
 - pages - sets of method for each test step
 - tests - sets of tests for functions of website
 
-## Type of commit
+## Type of commits
 - build: Changes that affect the build
 - ci: Changes to our CI Configuration files and scripts
 - docs: Documentation only changes
