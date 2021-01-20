@@ -10,6 +10,7 @@ class MainPageLocators:
 	DESKTOP_GRID_5 = (By.XPATH, "//*[@id='desktop-grid-5']/div/div[3]/a")
 	DESKTOP_GRID_6 = (By.XPATH, "//*[@id='desktop-grid-6']/div/div[3]/a")
 	DESKTOP_GRID_7 = (By.XPATH, "//*[@id='desktop-grid-7']/div/div[3]/a")
+	DESKTOP_GRID_1_D2 = (By.CSS_SELECTOR, "img[alt='We ship 45 million products around the world']")
 	TITLE_GRID_1 = (By.XPATH, "//*[@id='desktop-grid-1']/div/div[1]/h2")
 	TITLE_GRID_2 = (By.XPATH, "//*[@id='desktop-grid-2']/div/div[1]/h2")
 	TITLE_GRID_3 = (By.XPATH, "//*[@id='desktop-grid-3']/div/div[1]/h2")
@@ -26,5 +27,4 @@ class MainPageLocators:
 	TITLE_GET_FIT = (By.XPATH, "//*[@id='a-page']/div[2]/div[2]/div[1]/div[1]/div/h1")
 	TITLE_DEALS_PROM = (By.XPATH, "//*[@id='a-page']/div[2]/div[2]/div[1]/div[1]/div/h1")
 	TITLE_EASY_RETURNS = (By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div[3]/h1")
-
-	
+	TITLE_SHIPS_WORLDWIDE = (By.XPATH, "//*[@id='a-page']/div[2]/div/div/div/div/div/div/div/div[3]/div[1]/div[2]/div/h1")
