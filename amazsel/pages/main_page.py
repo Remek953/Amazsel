@@ -97,6 +97,11 @@ class MainPage:
 		elif title == "Easy returns":
 			return self.driver.find_element(*MainPageLocators.TITLE_EASY_RETURNS).text == title
 
+	def click_desktop_grid_1_d2(self):
+		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_1_D2).click()
+
+		
+
 
 
 
