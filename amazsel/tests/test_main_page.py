@@ -85,6 +85,13 @@ class TestMainPage(unittest.TestCase):
 		main_page.click_desktop_grid_7()
 		main_page.matches_title_grid(title)
 
+	def test_click_desktop_grid_1_d2(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.click_desktop_grid_1_d2()
+		header_text = "Amazon.com ships worldwide"
+		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_SHIPS_WORLDWIDE).text
+
 	def tearDown(self):
 		self.driver.close()
 		
