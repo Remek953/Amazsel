@@ -99,7 +99,14 @@ class MainPage:
 
 	def click_desktop_grid_1_d2(self):
 		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_1_D2).click()
-
+	def click_desktop_btf_1(self):
+		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_1).click()
+	def click_desktop_btf_2(self):
+		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_2).click()
+	def click_desktop_btf_3(self):
+		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_3).click()
+	def click_desktop_btf_4(self):
+		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_4).click()
 		
 
 
