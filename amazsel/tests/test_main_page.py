@@ -22,6 +22,7 @@ class TestMainPage(unittest.TestCase):
 		chrome_options.add_argument("--headless")
 		chrome_options.add_argument("--no-sandbox")
 		self.driver = webdriver.Chrome(ChromeDriverManager().install())
+		self.driver.maximize_window()
 
 	def test_main_page(self):
 		main_page = MainPage(self.driver)
@@ -91,6 +92,34 @@ class TestMainPage(unittest.TestCase):
 		main_page.click_desktop_grid_1_d2()
 		header_text = "Amazon.com ships worldwide"
 		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_SHIPS_WORLDWIDE).text
+
+	def test_click_desktop_btf_1(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.click_desktop_btf_1()
+		header_text = "The Women's Shop"
+		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_COMFY_STYLES).text
+
+	def test_click_desktop_btf_2(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.click_desktop_btf_2()
+		header_text = "Computers & Tablets"
+		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_LAPTOP_TABLETS).text
+
+	def test_click_desktop_btf_3(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.click_desktop_btf_3()
+		header_text = "Home bedding"
+		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_HOME_BEDDING).text
+
+	def test_click_desktop_btf_4(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.click_desktop_btf_4()
+		header_text = "strip lighting"
+		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_STRIP_LIGHTS).text
 
 	def tearDown(self):
 		self.driver.close()
