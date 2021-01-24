@@ -107,10 +107,20 @@ class MainPage:
 		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_3).click()
 	def click_desktop_btf_4(self):
 		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_4).click()
-		
 
+	def scroll_down(self):
+		self.driver.execute_script("window.scrollTo(0, 3750);")
+	def click_back_to_top(self):
+		self.driver.find_element(*MainPageLocators.BACK_TO_TOP).click()
 
+	def scroll_down_bottom(self):
+		self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
+	def click_logo_bottom(self):
+		self.driver.find_element(*MainPageLocators.LOGO_BOTTOM).click()
+	def is_logo_bottom_url_matches(self):
+		return "https://www.amazon.com/ref=footer_logo" in self.driver.current_url
 
-
-
-	
+	def top_displayed(self):
+		if self.driver.find_element(*MainPageLocators.TITLE_GRID_1):
+			return True
+		return False
