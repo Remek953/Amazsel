@@ -40,6 +40,9 @@ class MainPageLocators:
 	TITLE_HOME_BEDDING = (By.XPATH, "//*[@id='search']/span/div/span/h1/div/div[1]/div/div/span[3]")
 	TITLE_STRIP_LIGHTS = (By.XPATH, "//*[@id='search']/span/div/span/h1/div/div[1]/div/div/span[3]")
 
+	BACK_TO_TOP = (By.ID, "navBackToTop")
+	LOGO_BOTTOM = (By.XPATH, "//*[@id='navFooter']/div[3]/span[1]/div/a/div")
+
 
 
 	
