@@ -23,7 +23,7 @@ class TestMainPage(unittest.TestCase):
 		chrome_options.add_argument("--no-sandbox")
 		self.driver = webdriver.Chrome(ChromeDriverManager().install())
 		self.driver.maximize_window()
-
+		
 	def test_main_page(self):
 		main_page = MainPage(self.driver)
 		main_page.open_page()
@@ -120,6 +120,22 @@ class TestMainPage(unittest.TestCase):
 		main_page.click_desktop_btf_4()
 		header_text = "strip lighting"
 		assert header_text in self.driver.find_element(*MainPageLocators.TITLE_STRIP_LIGHTS).text
+
+	def test_back_to_top(self):
+		"""Verify functionality of back to top button"""
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.scroll_down()
+		main_page.click_back_to_top()
+		assert main_page.top_displayed()
+
+	def test_logo_bottom(self):
+		main_page = MainPage(self.driver)
+		main_page.open_page()
+		main_page.scroll_down_bottom()
+		main_page.click_logo_bottom()
+		assert main_page.top_displayed()
+		assert main_page.is_logo_bottom_url_matches()
 
 	def tearDown(self):
 		self.driver.close()
