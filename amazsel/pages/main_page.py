@@ -5,40 +5,40 @@ sys.path.append(path.dirname(path.dirname(path.abspath(__file__))))
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from locators.locators import MainPageLocators
+from .base_page import BasePage
 
-class MainPage:
+class MainPage(BasePage):
 
-	def __init__(self, driver):
-		self.driver = driver
+	#def __init__(self, driver):
+	#	self.driver = driver
 	def open_page(self):
 		self.driver.get("https://www.amazon.com/")
-		self.driver.implicitly_wait(5)
 	def is_title_matches(self):
 		return "Amazon.com: Online Shopping for Electronics, Apparel, Computers, Books, DVDs & more" in self.driver.title
 	def print_title(self):
 		print(self.driver.title)
 	def click_logo(self):
-		self.driver.find_element(*MainPageLocators.LOGO).click()
+		self.wait_for_element(MainPageLocators.LOGO).click()
 	def is_logo_url_matches(self):
 		return "https://www.amazon.com/ref=nav_logo" in self.driver.current_url
 
 	def click_desktop_grid_1(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_1).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_1).click()
 	def click_desktop_grid_2(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_2).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_2).click()
 	def click_desktop_grid_3(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_3).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_3).click()
 	def click_desktop_grid_4(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_4).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_4).click()
 	def click_desktop_grid_5(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_5).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_5).click()
 	def click_desktop_grid_6(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_6).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_6).click()
 	def click_desktop_grid_7(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_7).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_7).click()
 
-	def check_title_grid(self, *locator):
-			current_title = self.driver.find_element(*locator).text
+	def check_title_grid(self, locator):
+			current_title = self.wait_for_element(locator).text
 			if current_title == "AmazonBasics":
 				return "'amazonbasics'"
 			elif current_title == "Shop by Category":
@@ -61,66 +61,66 @@ class MainPage:
 				return "International Returns"
 
 	def check_title_grid_1(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_1)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_1)
 	def check_title_grid_2(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_2)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_2)
 	def check_title_grid_3(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_3)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_3)
 	def check_title_grid_4(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_4)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_4)
 	def check_title_grid_5(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_5)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_5)
 	def check_title_grid_6(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_6)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_6)
 	def check_title_grid_7(self):
-		return self.check_title_grid(*MainPageLocators.TITLE_GRID_7)
+		return self.check_title_grid(MainPageLocators.TITLE_GRID_7)
 
 	def matches_title_grid(self, title):
 		if title == "AmazonBasics":
-			return self.driver.find_element(*MainPageLocators.TITLE_AMAZONBASIC).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_AMAZONBASIC).text == title
 		elif title == "Shop by Category":
-			return self.driver.find_element(*MainPageLocators.TITLE_SHOP_BY_CAT).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_SHOP_BY_CAT).text == title
 		elif title == "Electronics":
-			return self.driver.find_element(*MainPageLocators.TITLE_ELECTRONICS).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_ELECTRONICS).text == title
 		elif title == "Computers & Accessories":
-			return self.driver.find_element(*MainPageLocators.TITLE_COMPUTERS_ACCESSORIES).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_COMPUTERS_ACCESSORIES).text == title
 		elif title == "Shop top categories":
-			return self.driver.find_element(*MainPageLocators.TITLE_SHOP_TOP).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_SHOP_TOP).text == title
 		elif title == "Beauty picks":
-			return self.driver.find_element(*MainPageLocators.TITLE_BEUATY_PICKS).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_BEUATY_PICKS).text == title
 		elif title == "Find your ideal TV":
 			pass
 		elif title == "Get fit at home":
-			return self.driver.find_element(*MainPageLocators.TITLE_GET_FIT).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_GET_FIT).text == title
 		elif title == "Deals & Promotions":
-			return self.driver.find_element(*MainPageLocators.TITLE_DEALS_PROM ).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_DEALS_PROM ).text == title
 		elif title == "Easy returns":
-			return self.driver.find_element(*MainPageLocators.TITLE_EASY_RETURNS).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_EASY_RETURNS).text == title
 
 	def click_desktop_grid_1_d2(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_GRID_1_D2).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_GRID_1_D2).click()
 	def click_desktop_btf_1(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_1).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_1).click()
 	def click_desktop_btf_2(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_2).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_2).click()
 	def click_desktop_btf_3(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_3).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_3).click()
 	def click_desktop_btf_4(self):
-		self.driver.find_element(*MainPageLocators.DESKTOP_BTF_GRID_4).click()
+		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_4).click()
 
 	def scroll_down(self):
 		self.driver.execute_script("window.scrollTo(0, 3750);")
 	def click_back_to_top(self):
-		self.driver.find_element(*MainPageLocators.BACK_TO_TOP).click()
+		self.wait_for_element(MainPageLocators.BACK_TO_TOP).click()
 
 	def scroll_down_bottom(self):
 		self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 	def click_logo_bottom(self):
-		self.driver.find_element(*MainPageLocators.LOGO_BOTTOM).click()
+		self.wait_for_element(MainPageLocators.LOGO_BOTTOM).click()
 	def is_logo_bottom_url_matches(self):
 		return "https://www.amazon.com/ref=footer_logo" in self.driver.current_url
 
 	def top_displayed(self):
-		if self.driver.find_element(*MainPageLocators.TITLE_GRID_1):
+		if self.wait_for_element(MainPageLocators.TITLE_GRID_1):
 			return True
 		return False

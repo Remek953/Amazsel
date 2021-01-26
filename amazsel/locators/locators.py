@@ -44,8 +44,3 @@ class MainPageLocators:
 	LOGO_BOTTOM = (By.XPATH, "//*[@id='navFooter']/div[3]/span[1]/div/a/div")
 
 
-
-	
-
-
-	
