@@ -18,24 +18,24 @@ class MainPage(BasePage):
 	def print_title(self):
 		print(self.driver.title)
 	def click_logo(self):
-		self.wait_for_element(MainPageLocators.LOGO).click()
+		self.wait_to_be_clickable(MainPageLocators.LOGO).click()
 	def is_logo_url_matches(self):
 		return "https://www.amazon.com/ref=nav_logo" in self.driver.current_url
 
 	def click_desktop_grid_1(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_1).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_1).click()
 	def click_desktop_grid_2(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_2).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_2).click()
 	def click_desktop_grid_3(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_3).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_3).click()
 	def click_desktop_grid_4(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_4).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_4).click()
 	def click_desktop_grid_5(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_5).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_5).click()
 	def click_desktop_grid_6(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_6).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_6).click()
 	def click_desktop_grid_7(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_7).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_7).click()
 
 	def check_title_grid(self, locator):
 			current_title = self.wait_for_element(locator).text
@@ -98,25 +98,25 @@ class MainPage(BasePage):
 			return self.wait_for_element(MainPageLocators.TITLE_EASY_RETURNS).text == title
 
 	def click_desktop_grid_1_d2(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_GRID_1_D2).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_GRID_1_D2).click()
 	def click_desktop_btf_1(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_1).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_BTF_GRID_1).click()
 	def click_desktop_btf_2(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_2).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_BTF_GRID_2).click()
 	def click_desktop_btf_3(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_3).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_BTF_GRID_3).click()
 	def click_desktop_btf_4(self):
-		self.wait_for_element(MainPageLocators.DESKTOP_BTF_GRID_4).click()
+		self.wait_to_be_clickable(MainPageLocators.DESKTOP_BTF_GRID_4).click()
 
 	def scroll_down(self):
 		self.driver.execute_script("window.scrollTo(0, 3750);")
 	def click_back_to_top(self):
-		self.wait_for_element(MainPageLocators.BACK_TO_TOP).click()
+		self.wait_to_be_clickable(MainPageLocators.BACK_TO_TOP).click()
 
 	def scroll_down_bottom(self):
 		self.driver.execute_script("window.scrollTo(0, document.body.scrollHeight);")
 	def click_logo_bottom(self):
-		self.wait_for_element(MainPageLocators.LOGO_BOTTOM).click()
+		self.wait_to_be_clickable(MainPageLocators.LOGO_BOTTOM).click()
 	def is_logo_bottom_url_matches(self):
 		return "https://www.amazon.com/ref=footer_logo" in self.driver.current_url
 
