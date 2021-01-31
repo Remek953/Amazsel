@@ -9,8 +9,6 @@ from .base_page import BasePage
 
 class MainPage(BasePage):
 
-	#def __init__(self, driver):
-	#	self.driver = driver
 	def open_page(self):
 		self.driver.get("https://www.amazon.com/")
 	def is_title_matches(self):
@@ -52,7 +50,7 @@ class MainPage(BasePage):
 			elif current_title == "Beauty picks":
 				return "Beauty and Personal Care"
 			elif current_title == "Find your ideal TV":
-				pass
+				return current_title == "Television & Video"
 			elif current_title == "Get fit at home":
 				return "Sports and Outdoors"
 			elif current_title == "Deals & Promotions":
@@ -89,11 +87,11 @@ class MainPage(BasePage):
 		elif title == "Beauty picks":
 			return self.wait_for_element(MainPageLocators.TITLE_BEUATY_PICKS).text == title
 		elif title == "Find your ideal TV":
-			pass
+			return self.wait_for_element(MainPageLocators.TITLE_IDEAL_TV).text == title
 		elif title == "Get fit at home":
 			return self.wait_for_element(MainPageLocators.TITLE_GET_FIT).text == title
 		elif title == "Deals & Promotions":
-			return self.wait_for_element(MainPageLocators.TITLE_DEALS_PROM ).text == title
+			return self.wait_for_element(MainPageLocators.TITLE_DEALS_PROM).text == title
 		elif title == "Easy returns":
 			return self.wait_for_element(MainPageLocators.TITLE_EASY_RETURNS).text == title
 
@@ -124,3 +122,11 @@ class MainPage(BasePage):
 		if self.wait_for_element(MainPageLocators.TITLE_GRID_1):
 			return True
 		return False
+
+	def open_lang_change(self):
+		self.wait_to_be_clickable(MainPageLocators.LANG_CHANGE).click()
+	def is_lang_title_matches(self):
+		return "Change Language & Currency Settings" in self.driver.title
+
+
+
