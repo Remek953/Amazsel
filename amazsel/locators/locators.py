@@ -34,6 +34,7 @@ class MainPageLocators:
 	TITLE_DEALS_PROM = (By.XPATH, "//*[@id='a-page']/div[2]/div[2]/div[1]/div[1]/div/h1")
 	TITLE_EASY_RETURNS = (By.XPATH, "/html/body/div[2]/div[2]/div[1]/div/div[3]/h1")
 	TITLE_SHIPS_WORLDWIDE = (By.XPATH, "//*[@id='a-page']/div[2]/div/div/div/div/div/div/div/div[3]/div[1]/div[2]/div/h1")
+	TITLE_IDEAL_TV = (By.XPATH, "//*[@id='departments']/ul/li[2]/span/a/span[2]")
 
 	TITLE_COMFY_STYLES = (By.XPATH, "//*[@id='a-page']/div[2]/div[2]/div[1]/div[1]/div/h1")
 	TITLE_LAPTOP_TABLETS = (By.XPATH, "//*[@id='departments']/ul/li[2]/span/span")
@@ -42,5 +43,11 @@ class MainPageLocators:
 
 	BACK_TO_TOP = (By.ID, "navBackToTop")
 	LOGO_BOTTOM = (By.XPATH, "//*[@id='navFooter']/div[3]/span[1]/div/a/div")
+	LANG_CHANGE = (By.CSS_SELECTOR, "img[alt='Shop in 8 different languages']")
 
+
+class LangPageLocators:
+	ENGLISH_CHECK = (By.XPATH, "//*[@id='customer-preferences']/div/div/form/div[1]/div[1]/div[1]/div/label")
+	ESPANOL_CHECK = (By.XPATH, "//*[@id='customer-preferences']/div/div/form/div[1]/div[1]/div[2]/div/label")
+	TEXT_BOX = (By.ID, "icp-sl-t-text")
 
