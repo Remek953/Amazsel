@@ -127,6 +127,3 @@ class MainPage(BasePage):
 		self.wait_to_be_clickable(MainPageLocators.LANG_CHANGE).click()
 	def is_lang_title_matches(self):
 		return "Change Language & Currency Settings" in self.driver.title
-
-
-

@@ -11,17 +11,19 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 
-
-
 class TestMainPage(unittest.TestCase):
 
 	def setUp(self):
-		chrome_options = Options()
-		chrome_options.add_argument("--headless")
-		chrome_options.add_argument("--no-sandbox")
-		self.driver = webdriver.Chrome(ChromeDriverManager().install())
-		self.driver.maximize_window()
-	
+		options = Options()
+		options.add_argument('--profile-directory=Default')
+		options.add_argument('--user-data-dir=C:/Temp/ChromeProfile')
+		options.add_argument('start-maximized')  
+		#options.add_argument("--headless") # Runs Chrome in headless mode.
+		#options.add_argument("--no-sandbox") # Bypass OS security model
+		#options.add_argument('disable-infobars')
+		#options.add_argument("--disable-extensions")
+		self.driver = webdriver.Chrome(ChromeDriverManager().install(), options = options)
+
 	def test_main_page(self):
 		main_page = MainPage(self.driver)
 		main_page.open_page()
