@@ -49,5 +49,18 @@ class MainPageLocators:
 class LangPageLocators:
 	ENGLISH_CHECK = (By.XPATH, "//*[@id='customer-preferences']/div/div/form/div[1]/div[1]/div[1]/div/label")
 	ESPANOL_CHECK = (By.XPATH, "//*[@id='customer-preferences']/div/div/form/div[1]/div[1]/div[2]/div/label")
+	DEUTSCH_CHECK = (By.XPATH, "//*[@id='customer-preferences']/div/div/form/div[1]/div[1]/div[4]/div/label")
+	PORTUGUES_CHECK = (By.XPATH, "//*[@id='customer-preferences']/div/div/form/div[1]/div[1]/div[5]/div/label")
 	TEXT_BOX = (By.ID, "icp-sl-t-text")
 
+	CURRENCY_SET = (By.ID, "a-autoid-0-announce")
+	CURRENCY_TEXT = (By.ID, "icp-sc-note")
+	USD = (By.ID, "icp-sc-dropdown_1")
+	ARS = (By.ID, "icp-sc-dropdown_3")
+	EURO = (By.ID, "icp-sc-dropdown_23")
+	HONG_KONG = (By.ID, "icp-sc-dropdown_27")
+	NOK = (By.ID, "icp-sc-dropdown_46")
+	POUNDS = (By.ID, "icp-sc-dropdown_51")
+	VND = (By.ID, "icp-sc-dropdown_64")
+	
+	
