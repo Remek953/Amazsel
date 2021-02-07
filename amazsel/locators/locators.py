@@ -62,5 +62,5 @@ class LangPageLocators:
 	NOK = (By.ID, "icp-sc-dropdown_46")
 	POUNDS = (By.ID, "icp-sc-dropdown_51")
 	VND = (By.ID, "icp-sc-dropdown_64")
-	
+	CANCEL_BUTTON = (By.ID, "icp-btn-close-announce")
 	
