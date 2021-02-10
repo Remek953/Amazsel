@@ -63,4 +63,8 @@ class LangPageLocators:
 	POUNDS = (By.ID, "icp-sc-dropdown_51")
 	VND = (By.ID, "icp-sc-dropdown_64")
 	CANCEL_BUTTON = (By.ID, "icp-btn-close-announce")
-	
+
+
+class RegisterPageLocators:
+	DROP_MENU = (By.ID, "nav-link-accountList")
+	SIGN_UP = (By.XPATH, "//*[@id='nav-flyout-ya-newCust']/a")
