@@ -3,10 +3,12 @@ __pycache__/
 dist/
 *.py[cod]
 *$py.class
+test.py
 
 *.log
 .cache
 .pytest_cache
+selenium/
 
 .venv
 .env
