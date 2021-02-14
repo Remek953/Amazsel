@@ -68,3 +68,19 @@ class LangPageLocators:
 class RegisterPageLocators:
 	DROP_MENU = (By.ID, "nav-link-accountList")
 	SIGN_UP = (By.XPATH, "//*[@id='nav-flyout-ya-newCust']/a")
+	CREATE_ACC_BUTTON = (By.ID, "continue")
+
+	NAME_ALERT = (By.XPATH, "//*[@id='auth-customerName-missing-alert']/div/div")
+	EMAIL_ALERT = (By.XPATH, "//*[@id='auth-email-missing-alert']/div/div")
+	INVALID_EMAIL_ALERT = (By.XPATH, "//*[@id='auth-email-invalid-email-alert']/div/div")
+	PASSWORD_ALERT = (By.XPATH, "//*[@id='auth-password-missing-alert']/div/div")
+	SHORT_PASSWORD_ALERT = (By.XPATH, "//*[@id='auth-password-invalid-password-alert']/div/div")		
+	RE_PASSWORD_ALERT = (By.XPATH, "//*[@id='auth-passwordCheck-missing-alert']/div/div")
+	MISMATCH_PASSWORD_ALERT = (By.XPATH, "//*[@id='auth-password-mismatch-alert']/div/div")
+
+	NAME_INPUT = (By.ID, "ap_customer_name")
+	EMAIL_INPUT = (By.ID, "ap_email")
+	PASSWORD_INPUT = (By.ID, "ap_password")
+	RE_PASSWORD_INPUT = (By.ID, "ap_password_check")
+	
+	
