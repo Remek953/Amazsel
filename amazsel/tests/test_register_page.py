@@ -13,6 +13,13 @@ import time
 
 
 class TestRegisterPage(unittest.TestCase):
+
+	""" 
+		There are 2 different register site.
+		First  - open by main page,  second - open by url.
+		In the first (main), alerts pop up below placeholder.
+		In the second (url), alert pops up on top in the message box text.
+	"""
 	
 	def setUp(self):
 		options = Options() 
@@ -20,7 +27,7 @@ class TestRegisterPage(unittest.TestCase):
 		#options.add_argument("--user-data-dir=selenium")
 		options.add_argument('start-maximized')  
 		options.add_argument("--disable-extensions")
-		#options.add_argument("--headless") # Runs Chrome in headless mode.
+		options.add_argument("--headless") # Runs Chrome in headless mode.
 		#options.add_argument("--no-sandbox") # Bypass OS security model
 		#options.add_argument('disable-infobars')
 		#options.add_argument('--disable-gpu')
@@ -41,6 +48,90 @@ class TestRegisterPage(unittest.TestCase):
 		register_page.open_register_page_main()
 		register_page.print_title()
 		assert register_page.is_title_matches()
+
+	def test_all_empty_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.email_alert()
+		assert register_page.password_alert()
+
+	def test_name_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.click_acc_button()
+		register_page.set_name_input("test")
+		assert not register_page.name_alert()
+		assert register_page.email_alert()
+		assert register_page.password_alert()
+
+	def test_invalid_email_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_email_input("test")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.invalid_email_alert()
+		assert register_page.password_alert()
+
+	def test_valid_email_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_email_input("test@test.com")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert not register_page.email_alert()
+		assert register_page.password_alert()
+
+	def test_short_password_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_password_input("test")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.email_alert()
+		assert register_page.short_password_alert()
+
+	def test_valid_password_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_password_input("testtest")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.email_alert()
+		assert not register_page.password_alert()
+
+	def test_re_password_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_re_password_input("test")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.email_alert()
+		assert register_page.password_alert()
+
+	def test_mismatch_short_password_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_password_input("test")
+		register_page.set_re_password_input("test1")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.email_alert()
+		assert register_page.short_password_alert()
+		assert register_page.re_password_alert_matches()
+
+	def test_mismatch_password_main(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_main()
+		register_page.set_password_input("testtest1")
+		register_page.set_re_password_input("test1")
+		register_page.click_acc_button()
+		assert register_page.name_alert()
+		assert register_page.email_alert()
+		assert not register_page.short_password_alert()
+		assert register_page.re_password_alert_matches()
 
 
 if __name__ == "__main__":
