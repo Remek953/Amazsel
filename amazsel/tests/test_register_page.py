@@ -15,23 +15,17 @@ import time
 class TestRegisterPage(unittest.TestCase):
 
 	""" 
-		There are 2 different register site.
-		First  - open by main page,  second - open by url.
-		In the first (main), alerts pop up below placeholder.
-		In the second (url), alert pops up on top in the message box text.
+	There are 2 different register site.
+	First  - open by main page,  second - open by url.
+	On the first (main page), alerts appear below the placeholder.
+	In the second (URL), the alert appears at the top of the text of the message box.
 	"""
 	
 	def setUp(self):
-		options = Options() 
-		#options.add_argument("--profile-directory=Default")
-		#options.add_argument("--user-data-dir=selenium")
+		options = Options()
 		options.add_argument('start-maximized')  
 		options.add_argument("--disable-extensions")
-		options.add_argument("--headless") # Runs Chrome in headless mode.
-		#options.add_argument("--no-sandbox") # Bypass OS security model
-		#options.add_argument('disable-infobars')
-		#options.add_argument('--disable-gpu')
-		#options.add_argument('--incognito')
+		#options.add_argument("--headless") # Runs Chrome in headless mode.
 		self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 	def tearDown(self):

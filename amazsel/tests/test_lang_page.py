@@ -12,8 +12,13 @@ from webdriver_manager.chrome import ChromeDriverManager
 import time
 
 
-
 class TestLangPage(unittest.TestCase):
+
+	"""
+	Add default profile because
+	detect all the checkbox and dropdown menu
+	(all the language and currency menu)
+	"""
 	
 	def setUp(self):
 		options = Options() 
@@ -21,11 +26,7 @@ class TestLangPage(unittest.TestCase):
 		options.add_argument("--user-data-dir=selenium")
 		options.add_argument('start-maximized')  
 		options.add_argument("--disable-extensions")
-		options.add_argument("--headless") # Runs Chrome in headless mode.
-		#options.add_argument("--no-sandbox") # Bypass OS security model
-		#options.add_argument('disable-infobars')
-		#options.add_argument('--disable-gpu')
-		#options.add_argument('--incognito')
+		#options.add_argument("--headless") # Runs Chrome in headless mode.
 		self.driver = webdriver.Chrome(ChromeDriverManager().install(), options=options)
 
 	def tearDown(self):
