@@ -17,8 +17,8 @@ class TestRegisterPage(unittest.TestCase):
 	""" 
 	There are 2 different register site.
 	First  - open by main page,  second - open by url.
-	On the first (main page), alerts appear below the placeholder.
-	In the second (URL), the alert appears at the top of the text of the message box.
+	The first (main page), alerts appear below the placeholder.
+	The second (URL), the alert appears at the top of the text of the message box.
 	"""
 	
 	def setUp(self):
@@ -126,6 +126,15 @@ class TestRegisterPage(unittest.TestCase):
 		assert register_page.email_alert()
 		assert not register_page.short_password_alert()
 		assert register_page.re_password_alert_matches()
+
+	def test_all_empty_url(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_url()
+		register_page.click_acc_button()
+		assert register_page.box_alert()
+		assert register_page.box_name_alert_0()
+		assert register_page.box_email_alert_0()
+		assert register_page.box_password_alert_0()
 
 
 if __name__ == "__main__":
