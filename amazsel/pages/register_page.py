@@ -51,6 +51,19 @@ class Register(BasePage):
 	def click_acc_button(self):
 		self.wait_to_be_clickable(RegisterPageLocators.CREATE_ACC_BUTTON).click()
 
+	def box_alert(self):
+		text = "There was a problem"
+		return text in self.wait_for_element(RegisterPageLocators.BOX_PROBLEM_ALERT).text 
+	def box_name_alert_0(self):
+		text = "Enter your name"
+		return text in self.wait_for_element(RegisterPageLocators.BOX_NAME_ALERT_0).text 
+	def box_email_alert_0(self):
+		text = "Enter your email"
+		return text in self.wait_for_element(RegisterPageLocators.BOX_EMAIL_ALERT_0).text 
+	def box_password_alert_0(self):
+		text = "Enter your password"
+		return text in self.wait_for_element(RegisterPageLocators.BOX_PASSWORD_ALERT_0).text 
+
 	def set_name_input(self, name):
 		self.wait_for_element(RegisterPageLocators.NAME_INPUT).click()
 		self.wait_for_element(RegisterPageLocators.NAME_INPUT).send_keys(name)
