@@ -86,6 +86,11 @@ class RegisterPageLocators:
 	RE_PASSWORD_INPUT = (By.ID, "ap_password_check")
 
 	BOX_PROBLEM_ALERT = (By.XPATH, "//*[@id='auth-error-message-box']/div/h4")
+	# Placeholders are empty ; fill invalid email ; fill one password placeholder or different passwords
 	BOX_NAME_ALERT_0 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[1]/span")
 	BOX_EMAIL_ALERT_0 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[2]/span")
 	BOX_PASSWORD_ALERT_0 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[3]/span")
+	# Name placeholder is fill
+	BOX_EMAIL_ALERT_1 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[1]/span")
+	BOX_PASSWORD_ALERT_1 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[2]/span")
+
