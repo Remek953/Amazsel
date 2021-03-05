@@ -54,8 +54,8 @@ class TestRegisterPage(unittest.TestCase):
 	def test_name_main(self):
 		register_page = Register(self.driver)
 		register_page.open_register_page_main()
-		register_page.click_acc_button()
 		register_page.set_name_input("test")
+		register_page.click_acc_button()
 		assert not register_page.name_alert()
 		assert register_page.email_alert()
 		assert register_page.password_alert()
@@ -136,6 +136,44 @@ class TestRegisterPage(unittest.TestCase):
 		assert register_page.box_email_alert_0()
 		assert register_page.box_password_alert_0()
 
+	def test_name_url(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_url()
+		register_page.set_name_input("test")
+		register_page.click_acc_button()
+		assert register_page.box_alert()
+		assert not register_page.box_name_alert_0()
+
+	def test_email_url(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_url()
+		register_page.set_email_input("test")
+		register_page.click_acc_button()
+		assert register_page.box_alert()
+		assert register_page.box_name_alert_0()
+		assert register_page.box_invalid_email_alert()
+		assert register_page.box_password_alert_0()
+
+	def test_password_url(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_url()
+		register_page.set_password_input("test")
+		register_page.click_acc_button()
+		assert register_page.box_alert()
+		assert register_page.box_name_alert_0()
+		assert register_page.box_email_alert_0()
+		assert register_page.box_match_password_alert()
+	
+	def test_mismatch_password_url(self):
+		register_page = Register(self.driver)
+		register_page.open_register_page_url()
+		register_page.set_password_input("test")
+		register_page.set_re_password_input("test1")
+		register_page.click_acc_button()
+		assert register_page.box_alert()
+		assert register_page.box_name_alert_0()
+		assert register_page.box_email_alert_0()
+		assert register_page.box_match_password_alert()
 
 if __name__ == "__main__":
 	unittest.main()
