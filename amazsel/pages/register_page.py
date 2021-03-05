@@ -60,9 +60,16 @@ class Register(BasePage):
 	def box_email_alert_0(self):
 		text = "Enter your email"
 		return text in self.wait_for_element(RegisterPageLocators.BOX_EMAIL_ALERT_0).text 
+	def box_invalid_email_alert(self):
+		text = "Enter a valid email address"
+		return text in self.wait_for_element(RegisterPageLocators.BOX_EMAIL_ALERT_0).text 
 	def box_password_alert_0(self):
 		text = "Enter your password"
 		return text in self.wait_for_element(RegisterPageLocators.BOX_PASSWORD_ALERT_0).text 
+	def box_match_password_alert(self):
+		text = "Passwords must match"
+		return text in self.wait_for_element(RegisterPageLocators.BOX_PASSWORD_ALERT_0).text 
+
 
 	def set_name_input(self, name):
 		self.wait_for_element(RegisterPageLocators.NAME_INPUT).click()
