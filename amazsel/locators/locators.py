@@ -94,3 +94,32 @@ class RegisterPageLocators:
 	BOX_EMAIL_ALERT_1 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[1]/span")
 	BOX_PASSWORD_ALERT_1 = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/dl/li[2]/span")
 
+
+class LoginPageLocators:
+	SIGN_IN = (By.XPATH, "//*[@id='nav-flyout-ya-signin']/a")
+	EMAIL_PHONE_INPUT = (By.ID, "ap_email")
+	EMPTY_EMAIL_PHONE = (By.XPATH, "//*[@id='auth-email-missing-alert']/div/div")
+	EMAIL_PHONE_ALERT = (By.XPATH, "//*[@id='auth-error-message-box']/div/div/ul/li/span")
+
+	CONTINUE_BUTTON = (By.ID, "continue")
+	CREATE_ACC_BUTTON = (By.ID, "createAccountSubmit")
+
+	NEED_HELP_LINK = (By.XPATH, "//*[@id='authportal-main-section']/div[2]/div/div[1]/form/div/div/div/div[3]/div/a/span")
+	FORGOT_PASS_LINK = (By.ID, "auth-fpp-link-bottom")
+	OTHER_ISSUES_LINK = (By.ID, "ap-other-signin-issues-link")
+	VALID_EMAIL = (By.XPATH, "//*[@id='authportal-main-section']/div[2]/div/div/div/div/span")
+	
+	FORGOT_PASS_SITE = (By.XPATH, "//*[@id='authportal-main-section']/div[2]/div/div[1]/div/form/h1")
+	OTHER_ISSUES_SITE = (By.XPATH, "//*[@id='a-page']/div[2]/div[1]/h1")
+	CREATE_ACC_SITE = (By.XPATH, "//*[@id='ap_register_form']/div/div/h1")
+	
+
+
+
+
+	
+
+
+
+	
+
